@@ -9,8 +9,8 @@
     --panel:#0f1115; --panelBorder:#1b1f2a; --muted:#9aa4b2;
     --grey:#ffffff; --green:#34a853; --blue:#4285f4; --gold:#fbbc05; --purple:#a142f4;
     /* Standard landingposisjon (desktop) */
-    --land-x: 38%;
-    --land-y: 61%;
+    --land-x: 50%;
+    --land-y: 90%;
   }
 
   /* Tilpass landing / layout på mobil */
@@ -67,7 +67,14 @@
   }
   .bg-img{
     position:absolute;inset:0;
-    background:url('assets/background/forest.jpg') center/cover no-repeat;
+    background: url("assets/background/forest.jpg") no-repeat center 80% / cover;
+}
+
+/* Mobil – behold perfekt posisjon slik du sa */
+@media(max-width: 900px){
+    body::before {
+        background-position: center 75%;
+    }
     filter:saturate(1.02) contrast(1.02);
   }
   .air{
@@ -308,6 +315,25 @@
 
   img:not([src]), img[src=""]{ display:none }
   img[data-hide="1"]{ display:none }
+/* Vinner-tekst / premie synlighet forbedret */
+.resultText{
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 6px #000, 0 0 14px #000;
+    background: rgba(0,0,0,.55);
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+/* MOBIL-versjon – større og mer leselig */
+@media(max-width:900px){
+  .resultText{
+      font-size: 6vw;
+      padding: 12px 22px;
+  }
+}
 </style>
 </head>
 <body>
