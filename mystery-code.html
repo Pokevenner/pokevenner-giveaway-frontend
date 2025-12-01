@@ -14,34 +14,63 @@
   }
 
   /* Tilpass landing / layout på mobil */
-  @media (max-width: 900px) {
-    :root{
-      /* Lander litt mer i midten / lavere på skjermen på mobil */
-      --land-x: 50%;
-      --land-y: 78%;
-    }
-
-    .reveal{
-      left:50%;
-      top:55%;
-      transform:translate(-50%,-50%) scale(.96);
-      flex-direction:column;
-      gap:12px;
-    }
-
-    .card{
-      width:60vmin;
-      height:40vmin;
-    }
-
-    .meta{
-      background:rgba(0,0,0,0.55);
-      padding:10px 12px;
-      border-radius:16px;
-      box-shadow:0 10px 25px rgba(0,0,0,.65);
-    }
+    @media (max-width: 900px) {
+  :root{
+    /* Hvor ballen lander på mobil */
+    --land-x: 50%;
+    --land-y: 78%;
   }
 
+  /* Flytt hele reveal litt ned og midt på skjermen */
+  .reveal{
+    left:50%;
+    top:60%;
+    transform:translate(-50%,-50%) scale(.95);
+    flex-direction:column;
+    gap:8px;
+    align-items:center;
+  }
+
+  /* Vi BEHOLDER kort-boksen på mobil, bare gjør den litt smalere/høyere */
+  .card{
+    width:58vmin;
+    height:36vmin;
+  }
+
+  /* Ingen bakgrunnsboks rundt teksten på mobil */
+  .meta{
+    background:none;
+    padding:0;
+    border-radius:0;
+    box-shadow:none;
+    max-width:80vw;
+    text-align:center;
+  }
+
+  .rarity-tag{
+    justify-content:center;
+    margin-bottom:4px;
+  }
+
+  /* Teksten: stor og lesbar, men uten stor svart boks */
+  .winner{
+    font-size:5vw;
+    -webkit-text-stroke:0.5px #000;
+    text-shadow:
+      0 0 3px rgba(0,0,0,.9),
+      0 2px 0 #000;
+    font-weight:900;
+  }
+
+  .item{
+    font-size:4.4vw;
+    -webkit-text-stroke:0.5px #000;
+    text-shadow:
+      0 0 3px rgba(0,0,0,.9),
+      0 2px 0 #000;
+    font-weight:700;
+  }
+}
   html,body{
     height:100%;margin:0;
     background:#000;
@@ -323,7 +352,7 @@
     text-shadow: 0 0 6px #000, 0 0 14px #000;
     background: rgba(0,0,0,.55);
     padding: 10px 20px;
-    border-radius: 12px;
+    border-radius: 2px;
     display: inline-block;
 }
 
